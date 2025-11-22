@@ -1,0 +1,39 @@
+.my-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.my-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.image img {
+  transition: transform 0.3s ease;
+}
+
+.my-card:hover img {
+  transform: scale(1.05);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between; /* pone los elementos en los extremos */
+  align-items: center;            /* centra verticalmente */
+  margin-bottom: 20px;
+}
+
+.favorites-btn {
+  background-color: #ffe600;
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.15s;
+}
+
+.favorites-btn:hover {
+  transform: scale(1.05);
+}
