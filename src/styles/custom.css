@@ -18,8 +18,8 @@
 
 .top-bar {
   display: flex;
-  justify-content: space-between; /* pone los elementos en los extremos */
-  align-items: center;            /* centra verticalmente */
+  justify-content: space-between; 
+  align-items: center;            
   margin-bottom: 20px;
 }
 

@@ -1,18 +1,16 @@
-import type { Character } from "../../types/Character";
+import { useContext } from "react";
 import "./Modal.css";
+import { CharacterContext } from "../../context/CharacterContext";
 
-interface Props {
-  character: Character | null;
-  onClose: () => void;
-}
+export default function Modal() {
+  const { selectedCharacter: character, closeModal } = useContext(CharacterContext);
 
-export default function Modal({ character, onClose }: Props) {
   if (!character) return null;
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay" onClick={closeModal}>
       <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={onClose}>
+        <button className="close-btn" onClick={closeModal}>
           <span>✖</span>
         </button>
 

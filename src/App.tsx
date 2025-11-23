@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import { AppProvider } from "./context/App.Context";
+import { CharacterProvider } from "./context/CharacterContext";
 
 export default function App() {
   return (
-    <AppProvider>
+    <CharacterProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
-    </AppProvider>
+    </CharacterProvider>
   );
 }

@@ -15,14 +15,14 @@
 /* Tarjeta del modal */
 .modal-card {
   background: rgb(17, 17, 17);
- padding: 60px 20px 20px 20px; /* ← MÁS ESPACIO ARRIBA */
+ padding: 60px 20px 20px 20px; 
   border-radius: 16px;
   text-align: center;
   position: relative;
   animation: scaleIn 0.25s ease-out;
- max-width: 330px;      /* máximo ancho */
-  max-height: 50vh;      /* máximo alto relativo a la ventana */
-  overflow-y: auto;      /* scroll si el contenido es muy grande */
+ max-width: 330px;    
+  max-height: 50vh;     
+  overflow-y: auto;   
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 

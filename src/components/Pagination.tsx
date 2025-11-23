@@ -1,19 +1,12 @@
-interface Props {
-  page: number;
-  totalPages: number;
-  next: () => void;
-  prev: () => void;
-  goToPage: (p: number) => void;
-}
+import { useContext } from "react";
+import { CharacterContext } from "../context/CharacterContext";
 
-export default function Pagination({
-  page,
-  totalPages,
-  next,
-  prev,
-  goToPage,
-}: Props) {
-  // Generar un rango de páginas (máximo 5 visibles)
+export default function Pagination() {
+  const { page, totalPages, setPage } = useContext(CharacterContext);
+
+  const next = () => setPage(page + 1);
+  const prev = () => setPage(page - 1);
+
   const getPages = () => {
     const pages = [];
     const maxButtons = 5;
@@ -31,12 +24,10 @@ export default function Pagination({
 
   return (
     <nav className="pagination is-centered" role="navigation">
-      {/* Botón anterior */}
       <button className="button" disabled={page <= 1} onClick={prev}>
         ←
       </button>
 
-      {/* Números */}
       <ul className="pagination-list mx-3">
         {getPages().map((num) => (
           <li key={num}>
@@ -47,7 +38,7 @@ export default function Pagination({
                 color: "white",
                 borderRadius: "6px",
               }}
-              onClick={() => goToPage(num)}
+              onClick={() => setPage(num)}
             >
               {num}
             </button>
@@ -55,7 +46,6 @@ export default function Pagination({
         ))}
       </ul>
 
-      {/* Botón siguiente */}
       <button className="button" disabled={page >= totalPages} onClick={next}>
         →
       </button>
