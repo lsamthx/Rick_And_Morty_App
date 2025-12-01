@@ -69,8 +69,6 @@ server.js → levanta un servidor virtual durante los tests
 
 El proyecto ya está listo para desplegarse en Vercel.
 
-Si quieres incluir un enlace:
-
 👉 Demo en producción: https://rick-and-morty-app-ruddy-tau.vercel.app/
 
 🧑‍🎨 Autor
