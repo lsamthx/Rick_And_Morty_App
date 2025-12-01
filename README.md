@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+🚀 Rick and Morty Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación Frontend desarrollada con React + Vite, que consume la Rick and Morty API para mostrar personajes, ver detalles en un modal, y realizar búsquedas y paginación.
+Incluye pruebas unitarias con Vitest, Testing Library y MSW para mockear peticiones HTTP.
 
-Currently, two official plugins are available:
+🧩 Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-Obtención de personajes desde RickAndMortyAPI
 
-## React Compiler
+-Renderizado de tarjetas con diseño responsivo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-Búsqueda de personajes por nombre
 
-## Expanding the ESLint configuration
+-Paginación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-Modal con información detallada al hacer clic en un personaje
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-Pruebas unitarias para componentes y lógica interna
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+-Mock Service Worker (MSW) para simular peticiones a la API
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-Proyecto creado con Vite para rendimiento optimizado
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🛠️ Tecnologías utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+React ->	UI y componentes
+Vite ->	Bundler y dev server
+CSS / Bulma ->	Estilos
+Vitest ->	Framework de testing
+React Testing Library ->	Pruebas de componentes
+MSW ->	Mock de API
+Axios / fetch ->	Consumo de API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🚀 Cómo ejecutar el proyecto en local
+1. Clonar el repositorio
+git clone https://github.com/lsamthx/Rick_And_Morty_App.git
+
+2. Instalar dependencias
+npm install
+
+3. Ejecutar en modo desarrollo
+npm run dev
+
+4. Build de producción
+npm run build
+
+5. Vista previa del build
+npm run preview
+
+🧪 Ejecutar las pruebas unitarias
+1. Correr todas las pruebas
+npm run test
+
+2. Correr pruebas en modo watch
+npm run test:watch
+
+3. Ver cobertura
+npm run coverage
+
+🧪 ¿Cómo funcionan los mocks (MSW)?
+
+El proyecto usa Mock Service Worker para simular las respuestas de la API en pruebas:
+
+handlers.js → define endpoints mockeados
+
+server.js → levanta un servidor virtual durante los tests
+
+📦 Deploy en Vercel
+
+El proyecto ya está listo para desplegarse en Vercel.
+
+Si quieres incluir un enlace:
+
+👉 Demo en producción: https://rick-and-morty-app-ruddy-tau.vercel.app/
+
+🧑‍🎨 Autor
+
+Samantha Valencia – Desarrolladora Frontend
+GitHub: @lsamthx
+
+📄 Licencia
+
+Este proyecto puede usarse libremente según los términos de la licencia MIT.
